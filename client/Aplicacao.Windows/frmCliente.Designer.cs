@@ -28,43 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.textCPF = new System.Windows.Forms.TextBox();
+            this.textValorDebito = new System.Windows.Forms.TextBox();
+            this.textValorCredito = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblSaldoInicialValor = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblSaldoValor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(69, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 23);
-            this.textBox1.TabIndex = 0;
+            this.textNome.Location = new System.Drawing.Point(69, 26);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(229, 23);
+            this.textNome.TabIndex = 0;
             // 
-            // textBox2
+            // textCPF
             // 
-            this.textBox2.Location = new System.Drawing.Point(69, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 23);
-            this.textBox2.TabIndex = 1;
+            this.textCPF.Location = new System.Drawing.Point(69, 60);
+            this.textCPF.Name = "textCPF";
+            this.textCPF.Size = new System.Drawing.Size(229, 23);
+            this.textCPF.TabIndex = 1;
             // 
-            // textBox3
+            // textValorDebito
             // 
-            this.textBox3.Location = new System.Drawing.Point(120, 98);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 2;
+            this.textValorDebito.Location = new System.Drawing.Point(120, 98);
+            this.textValorDebito.Name = "textValorDebito";
+            this.textValorDebito.Size = new System.Drawing.Size(178, 23);
+            this.textValorDebito.TabIndex = 2;
             // 
-            // textBox4
+            // textValorCredito
             // 
-            this.textBox4.Location = new System.Drawing.Point(120, 142);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 3;
+            this.textValorCredito.Location = new System.Drawing.Point(120, 142);
+            this.textValorCredito.Name = "textValorCredito";
+            this.textValorCredito.Size = new System.Drawing.Size(178, 23);
+            this.textValorCredito.TabIndex = 3;
             // 
             // label1
             // 
@@ -102,19 +107,77 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Valor de Credito";
             // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Location = new System.Drawing.Point(69, 185);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.TabIndex = 8;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(323, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 21);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "SALDO INICIAL";
+            // 
+            // lblSaldoInicialValor
+            // 
+            this.lblSaldoInicialValor.AutoSize = true;
+            this.lblSaldoInicialValor.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblSaldoInicialValor.ForeColor = System.Drawing.Color.Red;
+            this.lblSaldoInicialValor.Location = new System.Drawing.Point(368, 55);
+            this.lblSaldoInicialValor.Name = "lblSaldoInicialValor";
+            this.lblSaldoInicialValor.Size = new System.Drawing.Size(19, 21);
+            this.lblSaldoInicialValor.TabIndex = 10;
+            this.lblSaldoInicialValor.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(354, 106);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "SALDO";
+            // 
+            // lblSaldoValor
+            // 
+            this.lblSaldoValor.AutoSize = true;
+            this.lblSaldoValor.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblSaldoValor.ForeColor = System.Drawing.Color.Red;
+            this.lblSaldoValor.Location = new System.Drawing.Point(368, 136);
+            this.lblSaldoValor.Name = "lblSaldoValor";
+            this.lblSaldoValor.Size = new System.Drawing.Size(19, 21);
+            this.lblSaldoValor.TabIndex = 12;
+            this.lblSaldoValor.Text = "0";
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(571, 450);
+            this.Controls.Add(this.lblSaldoValor);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblSaldoInicialValor);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textValorCredito);
+            this.Controls.Add(this.textValorDebito);
+            this.Controls.Add(this.textCPF);
+            this.Controls.Add(this.textNome);
             this.Name = "frmCliente";
             this.Text = "frmCliente";
             this.ResumeLayout(false);
@@ -124,13 +187,18 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox textNome;
+        private TextBox textCPF;
+        private TextBox textValorDebito;
+        private TextBox textValorCredito;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
+        private Button btnCalcular;
+        private Label label5;
+        private Label lblSaldoInicialValor;
+        private Label label7;
+        private Label lblSaldoValor;
     }
 }
