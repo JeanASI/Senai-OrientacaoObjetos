@@ -11,7 +11,10 @@ using System.Windows.Forms;
 namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
 {
     public partial class frmCotacaoDolar : Form
+
     {
+        private bool CotacaoEhValido;
+        private bool ValorEmDolarEhValido;
         public frmCotacaoDolar()
         {
             InitializeComponent();
@@ -31,13 +34,21 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
             try
             {
                 var resultado = decimal.Parse(txtDolar.Text);
-            }
+                CotacaoEhValido = true;
+                
+                    if (ValorEmDolarEhValido && CotacaoEhValido)
+                    {
+                        btnCalcular.Enabled = true;
+                    }
+                  
+            }   
             catch (Exception)
             {
                 MessageBox.Show("A cotação do dolar é um valor decimal");
                 txtDolar.Focus();
+                CotacaoEhValido=false;
+                btnCalcular.Enabled=false;
 
-                throw;
             }
         }
 
@@ -46,13 +57,18 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
             try
             {
                 var resultado = decimal.Parse(txtValor.Text);
-            }
+                ValorEmDolarEhValido = true;
+                if(ValorEmDolarEhValido && CotacaoEhValido)
+                {
+                    btnCalcular.Enabled=true;
+                }
+            }  
             catch (Exception)
             {
                 MessageBox.Show("A cotação do dolar é um valor decimal");
                 txtDolar.Focus();
-
-                throw;
+                ValorEmDolarEhValido=false;
+                btnCalcular.Enabled=false;
             }
 
         }
