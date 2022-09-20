@@ -2,23 +2,28 @@ using AplicacaoPoo.Estrutural.Windows.Funcionalidades;
 
 namespace AplicacaoPoo.Estrutural.Windows
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
 
         private void btnDolar_Click(object sender, EventArgs e)
         {
-            var form = new Form01();
+            var form = new frmCotacaoDolar();
             form.Show();
         }
 
         private void btnComissao_Click(object sender, EventArgs e)
         {
-            var form = new Form02();
+            var form = new frmComissao();
             form.Show();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }   
 }
