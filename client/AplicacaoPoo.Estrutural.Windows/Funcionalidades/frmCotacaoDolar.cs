@@ -18,7 +18,7 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
         public frmCotacaoDolar()
         {
             InitializeComponent();
-            btnCalcular.Enabled = false;
+            HabilitaraOuDesabilitarBotaoCalcularConversao();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -35,19 +35,18 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
             {
                 var resultado = decimal.Parse(txtDolar.Text);
                 CotacaoEhValido = true;
-                
-                    if (ValorEmDolarEhValido && CotacaoEhValido)
-                    {
-                        btnCalcular.Enabled = true;
-                    }
-                  
-            }   
+                HabilitaraOuDesabilitarBotaoCalcularConversao();
+
+
+
+
+            }
             catch (Exception)
             {
                 MessageBox.Show("A cotação do dolar é um valor decimal");
                 txtDolar.Focus();
-                CotacaoEhValido=false;
-                btnCalcular.Enabled=false;
+                CotacaoEhValido = false;
+                HabilitaraOuDesabilitarBotaoCalcularConversao();
 
             }
         }
@@ -58,19 +57,28 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
             {
                 var resultado = decimal.Parse(txtValor.Text);
                 ValorEmDolarEhValido = true;
-                if(ValorEmDolarEhValido && CotacaoEhValido)
-                {
-                    btnCalcular.Enabled=true;
-                }
-            }  
+                HabilitaraOuDesabilitarBotaoCalcularConversao();
+            }
             catch (Exception)
             {
                 MessageBox.Show("A cotação do dolar é um valor decimal");
                 txtDolar.Focus();
-                ValorEmDolarEhValido=false;
-                btnCalcular.Enabled=false;
+                ValorEmDolarEhValido = false;
+                HabilitaraOuDesabilitarBotaoCalcularConversao();
             }
 
+        }
+
+        private void HabilitaraOuDesabilitarBotaoCalcularConversao()
+        {
+            if (ValorEmDolarEhValido && CotacaoEhValido)
+            {
+                btnCalcular.Enabled = true;
+            }
+            else
+            {
+                btnCalcular.Enabled=false;
+            }
         }
     }
 }
