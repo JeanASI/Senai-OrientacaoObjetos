@@ -28,22 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDolar = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(24, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cotação do Dólar :";
             // 
             // label2
             // 
@@ -55,14 +43,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Valor em Dólares :";
             // 
-            // txtDolar
-            // 
-            this.txtDolar.Location = new System.Drawing.Point(162, 21);
-            this.txtDolar.Name = "txtDolar";
-            this.txtDolar.Size = new System.Drawing.Size(100, 23);
-            this.txtDolar.TabIndex = 3;
-            this.txtDolar.TextChanged += new System.EventHandler(this.txtDolar_TextChanged);
-            // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(162, 54);
@@ -70,6 +50,7 @@
             this.txtValor.Size = new System.Drawing.Size(100, 23);
             this.txtValor.TabIndex = 4;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
+            
             // 
             // btnCalcular
             // 
@@ -90,9 +71,7 @@
             this.ClientSize = new System.Drawing.Size(375, 202);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtDolar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "frmCotacaoDolar";
             this.Text = "Cotação do Dolar";
             this.ResumeLayout(false);
@@ -101,10 +80,7 @@
         }
 
         #endregion
-
-        private Label label1;
         private Label label2;
-        private TextBox txtDolar;
         private TextBox txtValor;
         private Button btnCalcular;
     }
