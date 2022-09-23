@@ -28,50 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.btnCalcular = new System.Windows.Forms.Button();
+            this.lblPrimeiroValor = new System.Windows.Forms.Label();
+            this.lblSegunddoValor = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(24, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Valor em Dólares :";
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(162, 54);
+            this.txtValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtValor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtValor.ForeColor = System.Drawing.Color.White;
+            this.txtValor.Location = new System.Drawing.Point(29, 136);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 23);
+            this.txtValor.PlaceholderText = "informe o valor";
+            this.txtValor.Size = new System.Drawing.Size(157, 25);
             this.txtValor.TabIndex = 4;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
-            
             // 
-            // btnCalcular
+            // lblPrimeiroValor
             // 
-            this.btnCalcular.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCalcular.Location = new System.Drawing.Point(24, 104);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(75, 28);
-            this.btnCalcular.TabIndex = 5;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            this.lblPrimeiroValor.AutoSize = true;
+            this.lblPrimeiroValor.ForeColor = System.Drawing.Color.White;
+            this.lblPrimeiroValor.Location = new System.Drawing.Point(29, 24);
+            this.lblPrimeiroValor.Name = "lblPrimeiroValor";
+            this.lblPrimeiroValor.Size = new System.Drawing.Size(0, 15);
+            this.lblPrimeiroValor.TabIndex = 6;
+            // 
+            // lblSegunddoValor
+            // 
+            this.lblSegunddoValor.AutoSize = true;
+            this.lblSegunddoValor.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSegunddoValor.ForeColor = System.Drawing.Color.White;
+            this.lblSegunddoValor.Location = new System.Drawing.Point(24, 56);
+            this.lblSegunddoValor.Name = "lblSegunddoValor";
+            this.lblSegunddoValor.Size = new System.Drawing.Size(0, 30);
+            this.lblSegunddoValor.TabIndex = 7;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.ForeColor = System.Drawing.Color.Black;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Dólar",
+            "Libra",
+            "Euro"});
+            this.comboBox1.Location = new System.Drawing.Point(188, 137);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 8;
             // 
             // frmCotacaoDolar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCoral;
-            this.ClientSize = new System.Drawing.Size(375, 202);
-            this.Controls.Add(this.btnCalcular);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(344, 234);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblSegunddoValor);
+            this.Controls.Add(this.lblPrimeiroValor);
             this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.label2);
             this.Name = "frmCotacaoDolar";
             this.Text = "Cotação do Dolar";
             this.ResumeLayout(false);
@@ -80,8 +99,9 @@
         }
 
         #endregion
-        private Label label2;
         private TextBox txtValor;
-        private Button btnCalcular;
+        private Label lblPrimeiroValor;
+        private Label lblSegunddoValor;
+        private ComboBox comboBox1;
     }
 }

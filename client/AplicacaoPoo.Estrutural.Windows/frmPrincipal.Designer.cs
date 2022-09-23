@@ -71,7 +71,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(177, 214);
+            this.ClientSize = new System.Drawing.Size(189, 219);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnDolar);
             this.Controls.Add(this.btnComissao);
