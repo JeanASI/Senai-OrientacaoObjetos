@@ -15,19 +15,27 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
     public partial class frmCotacaoDolar : Form
 
     {
-       
+
         public frmCotacaoDolar()
         {
             InitializeComponent();
             lblPrimeiroValor.Text = $"1 {MoedaHelper.Dolar} igual a";
             lblSegunddoValor.Text = $"5,12 {MoedaHelper.Real}";
+
+
+            var list = new List<string>();
+            list.Add(MoedaHelper.Dolar);
+            list.Add(MoedaHelper.Euro);
+            list.Add(MoedaHelper.Libra);
+            cmbMoeda.DataSource = list;
+            cmbMoeda.SelectedIndex = 0;
         }
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 if (txtValor.Text == "") return;
-         
+
                 var valor = decimal.Parse(txtValor.Text);
 
                 var moeda = new ConverterMoedaServices();
@@ -43,6 +51,49 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
 
             }
 
+        }
+
+        private void cmbMoeda_SelectedIndexChanged(object sender, EventArgs e)
+
+        {
+            if (txtValor.Text == "") return;
+            var valor = decimal.Parse(txtValor.Text);
+            var moedaService    =   new ConverterMoedaServices();   
+            switch (cmbMoeda.SelectedValue)
+            {
+
+              case MoedaHelper.Dolar:
+                    {
+                     var valorConvertido = 
+                         moedaService.ConverterDolarEmReal(valor);
+                      lblPrimeiroValor.Text = $"{valor} {MoedaHelper.Dolar} igual a";
+                      lblSegunddoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+
+                        break;
+
+                    }
+              case MoedaHelper.Euro:
+                    {
+                    var valorConvertido =
+                         moedaService.ConverterEuroEmReal(valor);
+                        lblPrimeiroValor.Text = $"{valor} {MoedaHelper.Euro} igual a";
+                        lblSegunddoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+
+                        break;
+                    }
+
+              case MoedaHelper.Libra:
+                    {
+                     var valorConvertido =
+                         moedaService.ConverterLibraEmReal(valor);
+                        lblPrimeiroValor.Text = $"{valor} {MoedaHelper.Libra} igual a";
+                        lblSegunddoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+
+                        break;
+
+                    }
+
+            }
         }
     }
 }

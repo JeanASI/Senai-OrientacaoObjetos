@@ -31,7 +31,7 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblPrimeiroValor = new System.Windows.Forms.Label();
             this.lblSegunddoValor = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbMoeda = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtValor
@@ -66,20 +66,17 @@
             this.lblSegunddoValor.Size = new System.Drawing.Size(0, 30);
             this.lblSegunddoValor.TabIndex = 7;
             // 
-            // comboBox1
+            // cmbMoeda
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.Color.Black;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Dólar",
-            "Libra",
-            "Euro"});
-            this.comboBox1.Location = new System.Drawing.Point(188, 137);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 8;
+            this.cmbMoeda.BackColor = System.Drawing.Color.White;
+            this.cmbMoeda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMoeda.ForeColor = System.Drawing.Color.Black;
+            this.cmbMoeda.FormattingEnabled = true;
+            this.cmbMoeda.Location = new System.Drawing.Point(188, 137);
+            this.cmbMoeda.Name = "cmbMoeda";
+            this.cmbMoeda.Size = new System.Drawing.Size(121, 23);
+            this.cmbMoeda.TabIndex = 8;
+            this.cmbMoeda.SelectedIndexChanged += new System.EventHandler(this.cmbMoeda_SelectedIndexChanged);
             // 
             // frmCotacaoDolar
             // 
@@ -87,7 +84,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(344, 234);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbMoeda);
             this.Controls.Add(this.lblSegunddoValor);
             this.Controls.Add(this.lblPrimeiroValor);
             this.Controls.Add(this.txtValor);
@@ -102,6 +99,6 @@
         private TextBox txtValor;
         private Label lblPrimeiroValor;
         private Label lblSegunddoValor;
-        private ComboBox comboBox1;
+        private ComboBox cmbMoeda;
     }
 }
