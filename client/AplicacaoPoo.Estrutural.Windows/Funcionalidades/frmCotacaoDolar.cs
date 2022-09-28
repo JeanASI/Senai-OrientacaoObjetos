@@ -21,7 +21,7 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
             InitializeComponent();
             lblPrimeiroValor.Text = $"1 {MoedaHelper.Dolar} igual a";
             lblSegunddoValor.Text = $"5,12 {MoedaHelper.Real}";
-
+            txtValor.Text = "1";
 
             var list = new List<string>();
             list.Add(MoedaHelper.Dolar);
@@ -32,60 +32,55 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
         }
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (txtValor.Text == "")
             {
-                if (txtValor.Text == "") return;
-
-                var valor = decimal.Parse(txtValor.Text);
-
-                var moeda = new ConverterMoedaServices();
-                var resultado = moeda.ConverterDolarEmReal(valor);
-                lblPrimeiroValor.Text = $"{valor} {MoedaHelper.Dolar} igual a";
-                lblSegunddoValor.Text = $"{resultado} {MoedaHelper.Real}";
-
+                cmbMoeda.Enabled  = false;
+                return;
             }
-            catch (Exception)
-            {
-                MessageBox.Show("A cotação do dolar é um valor decimal");
-                txtValor.Focus();
-
-            }
+            cmbMoeda.Enabled = true;
+            EfetuarConversaoMoeda();
 
         }
 
         private void cmbMoeda_SelectedIndexChanged(object sender, EventArgs e)
-
         {
+            EfetuarConversaoMoeda();
+        }
+
+        private void EfetuarConversaoMoeda()
+        {
+            try
+            {
+            #region Meu codigo
             if (txtValor.Text == "") return;
             var valor = decimal.Parse(txtValor.Text);
-            var moedaService    =   new ConverterMoedaServices();   
+            var moedaService = new ConverterMoedaServices();
             switch (cmbMoeda.SelectedValue)
             {
-
-              case MoedaHelper.Dolar:
+                case MoedaHelper.Dolar:
                     {
-                     var valorConvertido = 
-                         moedaService.ConverterDolarEmReal(valor);
-                      lblPrimeiroValor.Text = $"{valor} {MoedaHelper.Dolar} igual a";
-                      lblSegunddoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+                        var valorConvertido =
+                            moedaService.ConverterDolarEmReal(valor);
+                        lblPrimeiroValor.Text = $"{valor} {MoedaHelper.Dolar} igual a";
+                        lblSegunddoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
 
                         break;
 
                     }
-              case MoedaHelper.Euro:
+                case MoedaHelper.Euro:
                     {
-                    var valorConvertido =
-                         moedaService.ConverterEuroEmReal(valor);
+                        var valorConvertido =
+                             moedaService.ConverterEuroEmReal(valor);
                         lblPrimeiroValor.Text = $"{valor} {MoedaHelper.Euro} igual a";
                         lblSegunddoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
 
                         break;
                     }
 
-              case MoedaHelper.Libra:
+                case MoedaHelper.Libra:
                     {
-                     var valorConvertido =
-                         moedaService.ConverterLibraEmReal(valor);
+                        var valorConvertido =
+                            moedaService.ConverterLibraEmReal(valor);
                         lblPrimeiroValor.Text = $"{valor} {MoedaHelper.Libra} igual a";
                         lblSegunddoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
 
@@ -94,6 +89,21 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
                     }
 
             }
+                #endregion
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Você precisa informar um valor númerico");
+                txtValor.Text = String.Empty;
+                txtValor.Focus();
+            }
+
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

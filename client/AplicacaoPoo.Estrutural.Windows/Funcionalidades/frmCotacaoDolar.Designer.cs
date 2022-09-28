@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotacaoDolar));
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblPrimeiroValor = new System.Windows.Forms.Label();
             this.lblSegunddoValor = new System.Windows.Forms.Label();
             this.cmbMoeda = new System.Windows.Forms.ComboBox();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtValor
@@ -43,7 +45,7 @@
             this.txtValor.Location = new System.Drawing.Point(29, 136);
             this.txtValor.Name = "txtValor";
             this.txtValor.PlaceholderText = "informe o valor";
-            this.txtValor.Size = new System.Drawing.Size(157, 25);
+            this.txtValor.Size = new System.Drawing.Size(115, 25);
             this.txtValor.TabIndex = 4;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
@@ -72,23 +74,38 @@
             this.cmbMoeda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMoeda.ForeColor = System.Drawing.Color.Black;
             this.cmbMoeda.FormattingEnabled = true;
-            this.cmbMoeda.Location = new System.Drawing.Point(188, 137);
+            this.cmbMoeda.Location = new System.Drawing.Point(144, 137);
             this.cmbMoeda.Name = "cmbMoeda";
-            this.cmbMoeda.Size = new System.Drawing.Size(121, 23);
+            this.cmbMoeda.Size = new System.Drawing.Size(129, 23);
             this.cmbMoeda.TabIndex = 8;
             this.cmbMoeda.SelectedIndexChanged += new System.EventHandler(this.cmbMoeda_SelectedIndexChanged);
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSair.BackgroundImage")));
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.Location = new System.Drawing.Point(310, 1);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(35, 27);
+            this.btnSair.TabIndex = 9;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // frmCotacaoDolar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(344, 234);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(348, 250);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.cmbMoeda);
             this.Controls.Add(this.lblSegunddoValor);
             this.Controls.Add(this.lblPrimeiroValor);
             this.Controls.Add(this.txtValor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCotacaoDolar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cotação do Dolar";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,5 +117,6 @@
         private Label lblPrimeiroValor;
         private Label lblSegunddoValor;
         private ComboBox cmbMoeda;
+        private Button btnSair;
     }
 }

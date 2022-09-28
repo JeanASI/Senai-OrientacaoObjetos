@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.btnComissao = new System.Windows.Forms.Button();
             this.btnDolar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -36,7 +37,7 @@
             // btnComissao
             // 
             this.btnComissao.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnComissao.Location = new System.Drawing.Point(33, 78);
+            this.btnComissao.Location = new System.Drawing.Point(127, 104);
             this.btnComissao.Name = "btnComissao";
             this.btnComissao.Size = new System.Drawing.Size(113, 49);
             this.btnComissao.TabIndex = 0;
@@ -47,7 +48,7 @@
             // btnDolar
             // 
             this.btnDolar.BackColor = System.Drawing.Color.LightCoral;
-            this.btnDolar.Location = new System.Drawing.Point(33, 19);
+            this.btnDolar.Location = new System.Drawing.Point(127, 45);
             this.btnDolar.Name = "btnDolar";
             this.btnDolar.Size = new System.Drawing.Size(113, 48);
             this.btnDolar.TabIndex = 1;
@@ -58,7 +59,7 @@
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.Khaki;
-            this.btnSair.Location = new System.Drawing.Point(33, 138);
+            this.btnSair.Location = new System.Drawing.Point(127, 164);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(113, 49);
             this.btnSair.TabIndex = 2;
@@ -71,11 +72,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(189, 219);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(368, 248);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnDolar);
             this.Controls.Add(this.btnComissao);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 
