@@ -28,68 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.btnComissao = new System.Windows.Forms.Button();
-            this.btnDolar = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.conversorDeMoedasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comissionamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.funcionaáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnComissao
+            // menuStrip1
             // 
-            this.btnComissao.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnComissao.Location = new System.Drawing.Point(127, 104);
-            this.btnComissao.Name = "btnComissao";
-            this.btnComissao.Size = new System.Drawing.Size(113, 49);
-            this.btnComissao.TabIndex = 0;
-            this.btnComissao.Text = "Comissão de peças";
-            this.btnComissao.UseVisualStyleBackColor = false;
-            this.btnComissao.Click += new System.EventHandler(this.btnComissao_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conversorDeMoedasToolStripMenuItem,
+            this.comissionamentoToolStripMenuItem,
+            this.cadastrosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(624, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnDolar
+            // conversorDeMoedasToolStripMenuItem
             // 
-            this.btnDolar.BackColor = System.Drawing.Color.LightCoral;
-            this.btnDolar.Location = new System.Drawing.Point(127, 45);
-            this.btnDolar.Name = "btnDolar";
-            this.btnDolar.Size = new System.Drawing.Size(113, 48);
-            this.btnDolar.TabIndex = 1;
-            this.btnDolar.Text = "Cotação do Dolar";
-            this.btnDolar.UseVisualStyleBackColor = false;
-            this.btnDolar.Click += new System.EventHandler(this.btnDolar_Click);
+            this.conversorDeMoedasToolStripMenuItem.Name = "conversorDeMoedasToolStripMenuItem";
+            this.conversorDeMoedasToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+            this.conversorDeMoedasToolStripMenuItem.Text = "Conversor de Moedas";
+            this.conversorDeMoedasToolStripMenuItem.Click += new System.EventHandler(this.conversorDeMoedasToolStripMenuItem_Click);
             // 
-            // btnSair
+            // comissionamentoToolStripMenuItem
             // 
-            this.btnSair.BackColor = System.Drawing.Color.Khaki;
-            this.btnSair.Location = new System.Drawing.Point(127, 164);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(113, 49);
-            this.btnSair.TabIndex = 2;
-            this.btnSair.Text = "&Sair";
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.comissionamentoToolStripMenuItem.Name = "comissionamentoToolStripMenuItem";
+            this.comissionamentoToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+            this.comissionamentoToolStripMenuItem.Text = "Comissionamento";
+            this.comissionamentoToolStripMenuItem.Click += new System.EventHandler(this.comissionamentoToolStripMenuItem_Click);
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem,
+            this.funcionaáriosToolStripMenuItem});
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // funcionaáriosToolStripMenuItem
+            // 
+            this.funcionaáriosToolStripMenuItem.Name = "funcionaáriosToolStripMenuItem";
+            this.funcionaáriosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.funcionaáriosToolStripMenuItem.Text = "Funcionários";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(368, 248);
-            this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnDolar);
-            this.Controls.Add(this.btnComissao);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(624, 391);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button btnComissao;
-        private Button btnDolar;
-        private Button btnSair;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem conversorDeMoedasToolStripMenuItem;
+        private ToolStripMenuItem comissionamentoToolStripMenuItem;
+        private ToolStripMenuItem cadastrosToolStripMenuItem;
+        private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem funcionaáriosToolStripMenuItem;
     }
 }
