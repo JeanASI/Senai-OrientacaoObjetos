@@ -38,9 +38,9 @@
             // 
             // progressBarLoading
             // 
-            this.progressBarLoading.Location = new System.Drawing.Point(27, 220);
+            this.progressBarLoading.Location = new System.Drawing.Point(17, 168);
             this.progressBarLoading.Name = "progressBarLoading";
-            this.progressBarLoading.Size = new System.Drawing.Size(508, 36);
+            this.progressBarLoading.Size = new System.Drawing.Size(449, 21);
             this.progressBarLoading.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarLoading.TabIndex = 0;
             this.progressBarLoading.Click += new System.EventHandler(this.progressBarLoading_Click);
@@ -48,9 +48,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(86, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(76, 51);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(389, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(335, 81);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -65,7 +65,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
-            this.ClientSize = new System.Drawing.Size(565, 297);
+            this.ClientSize = new System.Drawing.Size(478, 219);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.progressBarLoading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

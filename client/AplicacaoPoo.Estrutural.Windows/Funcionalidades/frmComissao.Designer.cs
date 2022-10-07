@@ -37,9 +37,9 @@
             this.txtQuantidadeVendida = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.cmbIdentificacaoVendedor = new System.Windows.Forms.ComboBox();
-            this.lbxComissao = new System.Windows.Forms.ListBox();
+            this.lblComissao = new System.Windows.Forms.Label();
+            this.lblDescricaoDaPeca = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -107,7 +107,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(21, 154);
+            this.label5.Location = new System.Drawing.Point(21, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 20);
             this.label5.TabIndex = 2;
@@ -115,22 +115,12 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(21, 177);
+            this.btnCalcular.Location = new System.Drawing.Point(21, 268);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(80, 23);
             this.btnCalcular.TabIndex = 4;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.SpringGreen;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(143, 281);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 26);
-            this.textBox5.TabIndex = 5;
             // 
             // cmbIdentificacaoVendedor
             // 
@@ -145,24 +135,35 @@
             this.cmbIdentificacaoVendedor.Size = new System.Drawing.Size(100, 23);
             this.cmbIdentificacaoVendedor.TabIndex = 6;
             // 
-            // lbxComissao
+            // lblComissao
             // 
-            this.lbxComissao.FormattingEnabled = true;
-            this.lbxComissao.ItemHeight = 15;
-            this.lbxComissao.Location = new System.Drawing.Point(110, 154);
-            this.lbxComissao.Name = "lbxComissao";
-            this.lbxComissao.Size = new System.Drawing.Size(339, 169);
-            this.lbxComissao.TabIndex = 7;
+            this.lblComissao.AutoSize = true;
+            this.lblComissao.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblComissao.Location = new System.Drawing.Point(107, 268);
+            this.lblComissao.Name = "lblComissao";
+            this.lblComissao.Size = new System.Drawing.Size(81, 21);
+            this.lblComissao.TabIndex = 8;
+            this.lblComissao.Text = "Comissao";
+            // 
+            // lblDescricaoDaPeca
+            // 
+            this.lblDescricaoDaPeca.AutoSize = true;
+            this.lblDescricaoDaPeca.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblDescricaoDaPeca.Location = new System.Drawing.Point(30, 174);
+            this.lblDescricaoDaPeca.Name = "lblDescricaoDaPeca";
+            this.lblDescricaoDaPeca.Size = new System.Drawing.Size(55, 21);
+            this.lblDescricaoDaPeca.TabIndex = 9;
+            this.lblDescricaoDaPeca.Text = "label6";
             // 
             // frmComissao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SpringGreen;
-            this.ClientSize = new System.Drawing.Size(470, 334);
-            this.Controls.Add(this.lbxComissao);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(355, 347);
+            this.Controls.Add(this.lblDescricaoDaPeca);
+            this.Controls.Add(this.lblComissao);
             this.Controls.Add(this.cmbIdentificacaoVendedor);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtQuantidadeVendida);
@@ -190,8 +191,9 @@
         private TextBox txtQuantidadeVendida;
         private Label label5;
         private Button btnCalcular;
-        private TextBox textBox5;
         private ComboBox cmbIdentificacaoVendedor;
-        private ListBox lbxComissao;
+        private Button button1;
+        private Label lblComissao;
+        private Label lblDescricaoDaPeca;
     }
 }
