@@ -18,9 +18,9 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
             InitializeComponent();
             lblComissao.Text = "resultado";
             int quantVendida = 0;
-            quantVendida = txtQuantidadeVendida.Text;
+           // quantVendida = txtQuantidadeVendida.Text;
             double precoUnitario = 0,  resultado = 0;
-            precoUnitario = txtPrecoDaPeca.Text;
+            //precoUnitario = txtPrecoDaPeca.Text;
             resultado = (quantVendida * precoUnitario)  / 0.05;
         }
     }

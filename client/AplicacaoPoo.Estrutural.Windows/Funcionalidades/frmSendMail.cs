@@ -20,24 +20,39 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
         }
 
         private void btnEnviarMensagem_Click(object sender, EventArgs e)
-        {
-            var mensagem = new MimeMessage();
-            mensagem.From.Add(new MailboxAddress(txtNomeCompleto.Text, null));
-            mensagem.To.Add(new MailboxAddress("Jeanderson", "jeandersonreggae@gmail.com"));
-            mensagem.Subject = "How you doin'?";
-            mensagem.Body = new TextPart("plain")
-            {
-                Text    =   txtMensagem.Text
-            };
-            using (var client = new SmtpClient())
-            {
-                client.Connect("smtp.gmail.com", 587, false);
+        {    
+            try
+            {   btnEnviarMensagem.Enabled = false;
+                var mensagem = new MimeMessage();
+                mensagem.From.Add(new MailboxAddress(txtNomeCompleto.Text, txtEmail.Text));
+                mensagem.ReplyTo.Add(new MailboxAddress(txtNomeCompleto.Text, txtEmail.Text));
+                mensagem.To.Add(new MailboxAddress("Jeanderson", "jeanderson.a.silva@aluno.senai.br"));
+                
+                mensagem.Subject = txtAssunto.Text;
+                mensagem.Body = new TextPart("plain")
+                {
+                    Text = txtMensagem.Text
+                };
+                using (var client = new SmtpClient())
+                {
+                    client.Connect("smtp.gmail.com", 587, false);
 
-                client.Authenticate("jeandersonreggae@gmail.com", "senha");
+                    client.Authenticate("user_senai_temp@faceli.edu.br", "senai@2022");
 
-                client.Send(mensagem);
-                client.Disconnect(true);
+                    client.Send(mensagem);
+                    client.Disconnect(true);
+                    btnEnviarMensagem.Enabled = true;
+                }
+                 
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+                throw;
+            }
+            
         }
     }
 }
+
